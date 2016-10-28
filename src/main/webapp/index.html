@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="filterModule" >
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="angular.js"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <div ng-controller="filterController as personCtrl">
+            <table>
+                 <tr>
+                    <th>
+                     Unfiltered:
+                    </th>
+                </tr>
+                 <tr ng-repeat="person in personCtrl.persons">
+                    <td>
+                        NAME: {{person.name}}
+                    </td>
+                    <td>
+                        - 
+                    </td>
+                    <td>
+                        AGE: {{person.age}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                     Filtered by age: 6-15
+                    </th>
+                </tr>
+                <tr ng-repeat="person in personCtrl.persons | ageFiltter">
+                    <td>
+                        NAME: {{person.name}}
+                    </td>
+                    <td>
+                        -
+                    </td>
+                    <td>
+                        AGE: {{person.age}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>
